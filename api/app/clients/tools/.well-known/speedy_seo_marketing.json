@@ -1,0 +1,27 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "speedy_seo_marketing",
+  "name_for_human": "SEO Content Marketing",
+  "description_for_model": "Plugin for generating a SEO blog and social media post for a website.",
+  "description_for_human": "SEO tool for your Shopify store, ecommerce website or any business. Create strategy, blogs and social content.",
+  "auth": {
+    "type": "oauth",
+    "instructions": "",
+    "client_url": "https://api.speedybrand.io/plugin_oauth",
+    "scope": "",
+    "authorization_url": "https://api.speedybrand.io/plugin_authorize",
+    "authorization_content_type": "application/json",
+    "verification_tokens": {
+      "openai": "3f7cf3f7e736466ebc83e239b99a54e9"
+    },
+    "pkce_required": false,
+    "token_exchange_method": null
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://api.speedybrand.io/openapi.yaml"
+  },
+  "logo_url": "https://api.speedybrand.io/logo.png",
+  "contact_email": "support@speedybrand.io",
+  "legal_info_url": "https://speedybrand.io/terms-and-conditions"
+}

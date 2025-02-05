@@ -1,0 +1,183 @@
+[
+  {
+    "name": "PDF Reader",
+    "pluginKey": "ChatWithPDF",
+    "description": "Read and analyze PDF documents with advanced text extraction and analysis capabilities.",
+    "icon": "https://i.imgur.com/MpA8XIw.png",
+    "authConfig": [
+      {
+        "authField": "PDF_API_KEY",
+        "label": "PDF API Key",
+        "description": "API key for PDF processing service"
+      }
+    ]
+  },
+  {
+    "name": "Weather Wizard",
+    "pluginKey": "Weather",
+    "description": "Get detailed weather forecasts, alerts, and conditions for any location worldwide.",
+    "icon": "https://i.imgur.com/XzGGfzP.png",
+    "authConfig": []
+  },
+  {
+    "name": "Image Editor",
+    "pluginKey": "image_editor",
+    "description": "Edit, enhance, and manipulate images with professional-grade tools.",
+    "icon": "https://i.imgur.com/7sJ4YZs.png",
+    "authConfig": []
+  },
+  {
+    "name": "Code Review",
+    "pluginKey": "AaronCodeReview",
+    "description": "Analyze code, find bugs, and suggest improvements across multiple programming languages.",
+    "icon": "https://i.imgur.com/NpKYZY8.png",
+    "authConfig": []
+  },
+  {
+    "name": "Stock Market Assistant",
+    "pluginKey": "stock_market_assistant",
+    "description": "Get real-time stock market data, analysis, and investment insights.",
+    "icon": "https://i.imgur.com/QqC2pRg.png",
+    "authConfig": []
+  },
+  {
+    "name": "Travel Planning",
+    "pluginKey": "Travel_Planning",
+    "description": "Plan trips, find flights, hotels, and create detailed travel itineraries.",
+    "icon": "https://i.imgur.com/vK2DtZG.png",
+    "authConfig": []
+  },
+  {
+    "name": "Recipe Finder",
+    "pluginKey": "recipe_finder",
+    "description": "Discover recipes, get cooking instructions, and meal planning assistance.",
+    "icon": "https://i.imgur.com/Y8YH0cJ.png",
+    "authConfig": []
+  },
+  {
+    "name": "Language Translator",
+    "pluginKey": "MixerBox_Translate_AI_language_tutor",
+    "description": "Translate text between multiple languages with high accuracy.",
+    "icon": "https://i.imgur.com/2L8HhF9.png",
+    "authConfig": []
+  },
+  {
+    "name": "Task Manager",
+    "pluginKey": "TaskOracle",
+    "description": "Create, organize, and track tasks and projects efficiently.",
+    "icon": "https://i.imgur.com/XNPJZKm.png",
+    "authConfig": []
+  },
+  {
+    "name": "Math Solver",
+    "pluginKey": "math_tutor",
+    "description": "Solve complex mathematical problems with step-by-step explanations.",
+    "icon": "https://i.imgur.com/L8bX2KC.png",
+    "authConfig": []
+  },
+  {
+    "name": "News Aggregator",
+    "pluginKey": "MixerBox_News",
+    "description": "Get latest news from multiple sources, customized to your interests.",
+    "icon": "https://i.imgur.com/9dYKZGk.png",
+    "authConfig": []
+  },
+  {
+    "name": "Calendar Assistant",
+    "pluginKey": "chat_with_calendars",
+    "description": "Manage schedules, set reminders, and organize events efficiently.",
+    "icon": "https://i.imgur.com/4Q9RDFs.png",
+    "authConfig": []
+  },
+  {
+    "name": "Document Creator",
+    "pluginKey": "doc_maker",
+    "description": "Create and format professional documents, reports, and presentations.",
+    "icon": "https://i.imgur.com/KjyKRsk.png",
+    "authConfig": []
+  },
+  {
+    "name": "Web Search Pro",
+    "pluginKey": "MixerBox_WebSearchG_web_search",
+    "description": "Advanced web search with filtered results and domain-specific searching.",
+    "icon": "https://i.imgur.com/Y8H8DvZ.png",
+    "authConfig": []
+  },
+  {
+    "name": "Data Analyzer",
+    "pluginKey": "data_analyzer",
+    "description": "Analyze and visualize data with advanced statistical tools.",
+    "icon": "https://i.imgur.com/P8HjpuZ.png",
+    "authConfig": []
+  },
+  {
+    "name": "Email Assistant",
+    "pluginKey": "EmailByNylas",
+    "description": "Draft, analyze, and organize emails professionally.",
+    "icon": "https://i.imgur.com/XmZhZWp.png",
+    "authConfig": []
+  },
+  {
+    "name": "Social Media Manager",
+    "pluginKey": "social_media_manager",
+    "description": "Create and analyze social media content across platforms.",
+    "icon": "https://i.imgur.com/R7Y8hjK.png",
+    "authConfig": []
+  },
+  {
+    "name": "File Converter",
+    "pluginKey": "file_converter",
+    "description": "Convert files between different formats seamlessly.",
+    "icon": "https://i.imgur.com/H9YhRvj.png",
+    "authConfig": []
+  },
+  {
+    "name": "Research Assistant",
+    "pluginKey": "ResearchAI",
+    "description": "Find and analyze academic papers and research materials.",
+    "icon": "https://i.imgur.com/Q2RZGjk.png",
+    "authConfig": []
+  },
+  {
+    "name": "SEO Analyzer",
+    "pluginKey": "SEO",
+    "description": "Analyze and optimize content for search engines.",
+    "icon": "https://i.imgur.com/VkY2hZM.png",
+    "authConfig": []
+  },
+  {
+    "name": "Password Generator",
+    "pluginKey": "password_generator",
+    "description": "Generate secure passwords and manage credentials safely.",
+    "icon": "https://i.imgur.com/L9XhJPv.png",
+    "authConfig": []
+  },
+  {
+    "name": "Voice Assistant",
+    "pluginKey": "quick_voicegpt",
+    "description": "Convert speech to text and text to speech with multiple voices.",
+    "icon": "https://i.imgur.com/WqKNF8p.png",
+    "authConfig": []
+  },
+  {
+    "name": "Code Generator",
+    "pluginKey": "code_generator",
+    "description": "Generate code snippets and boilerplate in multiple languages.",
+    "icon": "https://i.imgur.com/NpKYZY8.png",
+    "authConfig": []
+  },
+  {
+    "name": "Diagram Creator",
+    "pluginKey": "MixerBox_Diagrams_AI_diagram_generator",
+    "description": "Create flowcharts, diagrams, and visual representations.",
+    "icon": "https://i.imgur.com/Y8H8DvZ.png",
+    "authConfig": []
+  },
+  {
+    "name": "Resume Builder",
+    "pluginKey": "ResumeCopilot",
+    "description": "Create and format professional resumes and CVs.",
+    "icon": "https://i.imgur.com/KjyKRsk.png",
+    "authConfig": []
+  }
+]

@@ -11,13 +11,13 @@
 
 # EXAMPLE: if you want to use the config file and the latest numbered release docker image the result will be:
 
-# services:
-#   api:
-#     volumes:
-#     - type: bind
-#       source: ./librechat.yaml
-#       target: /app/librechat.yaml
-#     image: ghcr.io/danny-avila/librechat:latest
+ services:
+   api:
+     volumes:
+     - type: bind
+       source: ./librechat.yaml
+       target: /app/librechat.yaml
+     image: ghcr.io/danny-avila/librechat:latest
 
 # ---------------------------------------------------
 
@@ -53,19 +53,19 @@
 #   api:
 #     image: ghcr.io/danny-avila/librechat-api:latest
 
-# # ADD MONGO-EXPRESS
-#   mongo-express:
-#     image: mongo-express
-#     container_name: mongo-express
-#     environment:
-#       ME_CONFIG_MONGODB_SERVER: mongodb
-#       ME_CONFIG_BASICAUTH_USERNAME: admin
-#       ME_CONFIG_BASICAUTH_PASSWORD: password
-#     ports:
-#       - '8081:8081'
-#     depends_on:
-#       - mongodb
-#     restart: always
+ # ADD MONGO-EXPRESS
+mongo-express:
+     image: mongo-express
+     container_name: mongo-express
+     environment:
+       ME_CONFIG_MONGODB_SERVER: mongodb
+       ME_CONFIG_BASICAUTH_USERNAME: sgbouldin
+       ME_CONFIG_BASICAUTH_PASSWORD: Bboul6256
+     ports:
+       - '8081:8081'
+     depends_on:
+       - mongodb
+     restart: always
 
 # # USE MONGODB V4.4.18 - FOR OLDER CPU WITHOUT AVX SUPPORT
 #   mongodb:

@@ -1,4 +1,5 @@
 const availableTools = require('./manifest.json');
+const additionalTools = require('./manifest-additions.json');
 
 // Structured Tools
 const DALLE3 = require('./structured/DALLE3');
@@ -10,6 +11,7 @@ const StructuredSD = require('./structured/StableDiffusion');
 const GoogleSearchAPI = require('./structured/GoogleSearch');
 const TraversaalSearch = require('./structured/TraversaalSearch');
 const TavilySearchResults = require('./structured/TavilySearchResults');
+const CustomTools = require('./structured/CustomTools');
 
 /** @type {Record<string, TPlugin | undefined>} */
 const manifestToolMap = {};
@@ -17,7 +19,10 @@ const manifestToolMap = {};
 /** @type {Array<TPlugin>} */
 const toolkits = [];
 
-availableTools.forEach((tool) => {
+// Combine base tools with additional tools
+const allTools = [...availableTools, ...additionalTools];
+
+allTools.forEach((tool) => {
   manifestToolMap[tool.pluginKey] = tool;
   if (tool.toolkit === true) {
     toolkits.push(tool);
@@ -26,7 +31,7 @@ availableTools.forEach((tool) => {
 
 module.exports = {
   toolkits,
-  availableTools,
+  availableTools: allTools,
   manifestToolMap,
   // Structured Tools
   DALLE3,
@@ -38,4 +43,5 @@ module.exports = {
   StructuredWolfram,
   createYouTubeTools,
   TavilySearchResults,
+  CustomTools,
 };
