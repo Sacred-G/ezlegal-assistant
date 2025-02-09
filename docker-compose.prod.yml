@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/dhparam:/etc/nginx/ssl/dhparam
+    depends_on:
+      - api
+    restart: always
+
+  api:
+    ports:
+      - "3080"
+    environment:
+      - HOST=0.0.0.0
+      - DOMAIN_CLIENT=https://legalez-assistant.sbouldin.com
+      - DOMAIN_SERVER=https://legalez-assistant.sbouldin.com
