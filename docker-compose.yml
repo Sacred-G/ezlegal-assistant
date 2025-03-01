@@ -30,7 +30,6 @@ services:
     container_name: chat-mongodb
     image: mongo
     restart: always
-    user: "${UID}:${GID}"
     volumes:
       - ./data-node:/data/db
     command: mongod --noauth
@@ -38,7 +37,6 @@ services:
     container_name: chat-meilisearch
     image: getmeili/meilisearch:v1.12.3
     restart: always
-    user: "${UID}:${GID}"
     environment:
       - MEILI_HOST=http://meilisearch:7700
       - MEILI_NO_ANALYTICS=true
@@ -66,34 +64,6 @@ services:
       - vectordb
     env_file:
       - .env
-
-  mcp-filesystem:
-    container_name: chat-mcp-filesystem
-    build:
-      context: ./packages/mcp
-      dockerfile: Dockerfile
-    restart: always
-    environment:
-      - MCP_ENABLED=${MCP_ENABLED:-false}
-      - MCP_PORT=${MCP_PORT:-3000}
-    volumes:
-      - ./packages/mcp:/app
-    depends_on:
-      - api
-
-  mcp-sql:
-    container_name: chat-mcp-sql
-    build:
-      context: c:/mcp/sql-server
-      dockerfile: Dockerfile
-    restart: always
-    environment:
-      - MCP_ENABLED=${MCP_ENABLED:-false}
-      - MCP_PORT=${MCP_PORT:-3001}
-    volumes:
-      - c:/mcp/sql-server:/app
-    depends_on:
-      - api
 
 volumes:
   pgdata2:

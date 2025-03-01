@@ -1,10 +1,13 @@
-const { Tool } = require('./Tool');
+const { Tool } = require('@langchain/core/tools');
 const ToolConfigs = require('./ToolConfigs');
 const axios = require('axios');
 
 class CustomTools extends Tool {
+  name = 'custom_tools';
+  description = 'A collection of custom tools for various operations';
+
   constructor(fields) {
-    super(fields);
+    super();
   }
 
   async makeApiRequest(toolName, endpoint, method = 'GET', data = null) {
@@ -27,7 +30,7 @@ class CustomTools extends Tool {
         method,
         url: `${baseUrl}${endpoint}`,
         headers,
-        data,
+        data
       });
       return response.data;
     } catch (error) {
@@ -36,7 +39,7 @@ class CustomTools extends Tool {
     }
   }
 
-  async handle(input, options = {}) {
+  async _call(input, options = {}) {
     const { pluginKey } = options;
     const config = ToolConfigs.getConfig(pluginKey);
 
@@ -46,55 +49,55 @@ class CustomTools extends Tool {
 
     try {
       switch (pluginKey) {
-        case 'ChatWithPDF':
+        case 'pdf-reader':
           return this.handlePDFReader(input, config);
-        case 'Weather':
+        case 'weather-wizard':
           return this.handleWeather(input, config);
-        case 'image_editor':
+        case 'image-editor':
           return this.handleImageEditor(input, config);
-        case 'AaronCodeReview':
+        case 'code-review':
           return this.handleCodeReview(input, config);
-        case 'stock_market_assistant':
+        case 'stock-market':
           return this.handleStockMarket(input, config);
-        case 'Travel_Planning':
+        case 'travel-planner':
           return this.handleTravelPlanner(input, config);
-        case 'recipe_finder':
+        case 'recipe-finder':
           return this.handleRecipeFinder(input, config);
-        case 'MixerBox_Translate_AI_language_tutor':
+        case 'language-translator':
           return this.handleTranslator(input, config);
-        case 'TaskOracle':
+        case 'task-manager':
           return this.handleTaskManager(input, config);
-        case 'math_tutor':
+        case 'math-solver':
           return this.handleMathSolver(input, config);
-        case 'MixerBox_News':
+        case 'news-aggregator':
           return this.handleNewsAggregator(input, config);
-        case 'chat_with_calendars':
+        case 'calendar-assistant':
           return this.handleCalendar(input, config);
-        case 'doc_maker':
+        case 'document-creator':
           return this.handleDocumentCreator(input, config);
-        case 'MixerBox_WebSearchG_web_search':
+        case 'web-search-pro':
           return this.handleWebSearch(input, config);
-        case 'data_analyzer':
+        case 'data-analyzer':
           return this.handleDataAnalyzer(input, config);
-        case 'EmailByNylas':
+        case 'email-assistant':
           return this.handleEmailAssistant(input, config);
-        case 'social_media_manager':
+        case 'social-media-manager':
           return this.handleSocialMedia(input, config);
-        case 'file_converter':
+        case 'file-converter':
           return this.handleFileConverter(input, config);
-        case 'ResearchAI':
+        case 'research-assistant':
           return this.handleResearch(input, config);
-        case 'SEO':
+        case 'seo-analyzer':
           return this.handleSEO(input, config);
-        case 'password_generator':
+        case 'password-generator':
           return this.handlePasswordGenerator(input, config);
-        case 'quick_voicegpt':
+        case 'voice-assistant':
           return this.handleVoiceAssistant(input, config);
-        case 'code_generator':
+        case 'code-generator':
           return this.handleCodeGenerator(input, config);
-        case 'MixerBox_Diagrams_AI_diagram_generator':
+        case 'diagram-creator':
           return this.handleDiagramCreator(input, config);
-        case 'ResumeCopilot':
+        case 'resume-builder':
           return this.handleResumeBuilder(input, config);
         default:
           throw new Error('Unknown plugin key');

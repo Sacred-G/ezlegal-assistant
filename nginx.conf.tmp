@@ -3,9 +3,10 @@ server {
     listen [::]:80;
     server_name 147.93.41.71;
 
-    # API endpoints
+    client_max_body_size 25M;
+
     location /api/ {
-        proxy_pass http://api:3080;
+        proxy_pass http://api:3080/;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -14,11 +15,11 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 90;
     }
 
-    # Frontend
     location / {
-        proxy_pass http://api:3080;
+        proxy_pass http://api:3080/;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -27,5 +28,6 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-    }
+        proxy_read_timeout 90;
+    }/
 }

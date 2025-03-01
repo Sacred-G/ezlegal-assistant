@@ -8,8 +8,16 @@ import {
   SearchContext,
   SetConvoProvider,
 } from '~/Providers';
-import { useAuthContext, useAssistantsMap, useAgentsMap, useFileMap, useSearch } from '~/hooks';
+import { 
+  useAuthContext, 
+  useAssistantsMap, 
+  useAgentsMap, 
+  useFileMap, 
+  useSearch,
+  useFirstLogin 
+} from '~/hooks';
 import TermsAndConditionsModal from '~/components/ui/TermsAndConditionsModal';
+import WelcomePopup from '~/components/Auth/WelcomePopup';
 import { useUserTermsQuery, useGetStartupConfig } from '~/data-provider';
 import { Nav, MobileNav } from '~/components/Nav';
 import { Banner } from '~/components/Banners';
@@ -24,6 +32,7 @@ export default function Root() {
   });
 
   const { isAuthenticated, logout } = useAuthContext();
+  const { isFirstLogin, setFirstLoginComplete } = useFirstLogin();
   const assistantsMap = useAssistantsMap({ isAuthenticated });
   const agentsMap = useAgentsMap({ isAuthenticated });
   const fileMap = useFileMap({ isAuthenticated });
@@ -81,6 +90,10 @@ export default function Root() {
                 modalContent={config.interface.termsOfService.modalContent}
               />
             )}
+            <WelcomePopup 
+              isOpen={isFirstLogin} 
+              onClose={setFirstLoginComplete} 
+            />
           </AssistantsMapContext.Provider>
         </FileMapContext.Provider>
       </SearchContext.Provider>
